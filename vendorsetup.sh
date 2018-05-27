@@ -1,0 +1,1 @@
+add_lunch_combo aosp_s3ve3gxx-userdebug
