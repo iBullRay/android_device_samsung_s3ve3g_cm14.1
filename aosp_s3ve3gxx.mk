@@ -13,15 +13,18 @@
 # limitations under the License.
 #
 
-# Inherit some common AOSP stuff.
-$(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+# Inherit from the common Open Source product configuration
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
-# Inherit from serrano3gxx device
-$(call inherit-product, device/samsung/s3ve3gxx/full_s3ve3gxx.mk)
+# Inherit from s3ve3gxx device
+$(call inherit-product, device/samsung/s3ve3gxx/device.mk)
 
-# Release name
+# Device identifier. This must come after all inclusions
 PRODUCT_RELEASE_NAME := aosp_s3ve3gxx
 PRODUCT_NAME := aosp_s3ve3gxx
+PRODUCT_DEVICE := s3ve3gxx
+PRODUCT_BRAND := samsung
+PRODUCT_MODEL := GT-I930XX
+PRODUCT_MANUFACTURER := Samsung
 
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    TARGET_DEVICE=s3ve3gxx
+PRODUCT_GMS_CLIENTID_BASE := android-samsung
