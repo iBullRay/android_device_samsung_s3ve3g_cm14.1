@@ -16,12 +16,11 @@
 # Inherit from msm8226-common
 -include device/samsung/msm8226-common/BoardConfigCommon.mk
 
-# Assert
-TARGET_OTA_ASSERT_DEVICE := s3ve3g,s3ve3gds,s3ve3gjv
-
-# Lights
-TARGET_PROVIDES_LIBLIGHT := true
-
 # Init
-TARGET_INIT_VENDOR_LIB := libinit_s3ve3g
-TARGET_UNIFIED_DEVICE := true
+TARGET_INIT_VENDOR_LIB := libinit_s3ve3gxx
+TARGET_RECOVERY_DEVICE_MODULES := libinit_s3ve3gxx
+TARGET_OTA_ASSERT_DEVICE := s3ve3g,s3ve3gds,s3ve3gjv
+TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
+
+# Kernel
+TARGET_KERNEL_CONFIG := aosp_s3ve3gxx_defconfig
