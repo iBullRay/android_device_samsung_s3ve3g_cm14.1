@@ -1,4 +1,5 @@
-# Copyright (C) 2015 The Android Open-Source Project
+# Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) (C) 2017, The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -23,4 +24,4 @@ TARGET_OTA_ASSERT_DEVICE := s3ve3g,s3ve3gds,s3ve3gjv
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
 
 # Kernel
-TARGET_KERNEL_CONFIG := aosp_s3ve3gxx_defconfig
+TARGET_KERNEL_CONFIG := s3ve3gxx_defconfig

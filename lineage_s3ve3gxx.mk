@@ -1,4 +1,5 @@
-# Copyright (C) 2015 The Android Open-Source Project
+# Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2017, The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,15 +14,15 @@
 # limitations under the License.
 #
 
-# Inherit from the common Open Source product configuration
-$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+# Inherit from those products. Most specific first.
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
 # Inherit from s3ve3gxx device
 $(call inherit-product, device/samsung/s3ve3gxx/device.mk)
 
 # Device identifier. This must come after all inclusions
-PRODUCT_RELEASE_NAME := aosp_s3ve3gxx
-PRODUCT_NAME := aosp_s3ve3gxx
+PRODUCT_RELEASE_NAME := lineage_s3ve3gxx
+PRODUCT_NAME := lineage_s3ve3gxx
 PRODUCT_DEVICE := s3ve3gxx
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := GT-I930XX
