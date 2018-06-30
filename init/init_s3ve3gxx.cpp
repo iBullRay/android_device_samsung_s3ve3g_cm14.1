@@ -26,15 +26,13 @@
  */
 
 #include <stdlib.h>
-#include <unistd.h>
-
-#include <cutils/properties.h>
-#include "vendor_init.h"
-#include "log.h"
-#include "util.h"
-
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
+
+#include "vendor_init.h"
+#include "property_service.h"
+#include "log.h"
+#include "util.h"
 
 void property_override(char const prop[], char const value[])
 {
@@ -49,36 +47,24 @@ void property_override(char const prop[], char const value[])
 
 void vendor_load_properties()
 {
-    char platform[PROP_VALUE_MAX];
-    char bootloader[PROP_VALUE_MAX];
-    char device[PROP_VALUE_MAX];
-    char devicename[PROP_VALUE_MAX];
-    int rc;
-
-    rc = property_get("ro.board.platform", platform, NULL);
-    if (!rc || strncmp(platform, ANDROID_TARGET, PROP_VALUE_MAX))
+    std::string platform = property_get("ro.board.platform");
+    if (platform != ANDROID_TARGET)
         return;
 
-    property_get("ro.bootloader", bootloader, NULL);
+    std::string bootloader = property_get("ro.bootloader");
 
-    if (strstr(bootloader, "I9301I")) {
+    if (bootloader == "I9301I") {
         /* s3ve3g */
-        property_override("ro.build.fingerprint", "samsung/s3ve3gxx/s3ve3g:4.4.2/KOT49H/I9301IXXUANL1:user/release-keys");
-        property_override("ro.build.description", "s3ve3gxx-user 4.4.2 KOT49H I9301IXXUANL1 release-keys");
         property_override("ro.product.model", "GT-I9301I");
         property_override("ro.product.device", "s3ve3g");
         property_override("ro.telephony.default_network", "0");
-    } else if (strstr(bootloader, "I9301Q")) {
+    } else if (bootloader == "I9301Q") {
         /* s3ve3gjv */
-        property_override("ro.build.fingerprint", "samsung/s3ve3gjv/s3ve3g:4.4.2/KOT49H/I9301QXXUANH1:user/release-keys");
-        property_override("ro.build.description", "s3ve3gjv-user 4.4.2 KOT49H I9301QXXUANH1 release-keys");
         property_override("ro.product.model", "GT-I9301Q");
         property_override("ro.product.device", "s3ve3gjv");
         property_override("ro.telephony.default_network", "0");
-    } else if (strstr(bootloader, "I9300I")) {
+    } else if (bootloader == "I9300I") {
         /* s3ve3gds */
-        property_override("ro.build.fingerprint", "samsung/s3ve3gdsxx/s3ve3gds:4.4.4/KTU84P/I9300IXWUBNJ1:user/release-keys");
-        property_override("ro.build.description", "s3ve3gdsxx-user 4.4.4 KTU84P I9300IXWUBNJ1 release-keys");
         property_override("ro.product.model", "GT-I9300I");
         property_override("ro.product.device", "s3ve3gds");
         property_override("ro.multisim.set_audio_params", "true");
@@ -86,8 +72,4 @@ void vendor_load_properties()
         property_override("persist.radio.multisim.config", "dsds");
         property_override("ro.telephony.default_network", "0,1");
     }
-
-    property_get("ro.product.device", device, NULL);
-    strlcpy(devicename, device, sizeof(devicename));
-    ERROR("Found bootloader id %s setting build properties for %s device\n", bootloader, devicename);
 }
