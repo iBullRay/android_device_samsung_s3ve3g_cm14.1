@@ -1,4 +1,5 @@
-# Copyright (C) 2015 The Android Open-Source Project
+# Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2017, The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,7 +16,13 @@
 
 """ Custom OTA commands for s3ve3gds device """
 
+def IncrementalOTA_InstallEnd(info):
+    DeviceBlobs(info)
+
 def FullOTA_InstallEnd(info):
+    DeviceBlobs(info)
+
+def DeviceBlobs(info):
   info.script.Mount("/system")
   info.script.AppendExtra('ifelse(is_substring("I9300I", getprop("ro.bootloader")), run_program("/sbin/sh", "-c", "busybox cp -R /system/blobs/s3ve3gds/* /system/"));')
   info.script.AppendExtra('set_metadata("/system/bin/qmuxd", "uid", 0, "gid", 2000, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:qmuxd_exec:s0");')
