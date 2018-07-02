@@ -57,19 +57,19 @@ void vendor_load_properties()
         /* s3ve3g */
         property_override("ro.product.model", "GT-I9301I");
         property_override("ro.product.device", "s3ve3g");
-        property_override("ro.telephony.default_network", "0");
+        property_set("ro.telephony.default_network", "0");
     } else if (bootloader == "I9301Q") {
         /* s3ve3gjv */
         property_override("ro.product.model", "GT-I9301Q");
         property_override("ro.product.device", "s3ve3gjv");
-        property_override("ro.telephony.default_network", "0");
+        property_set("ro.telephony.default_network", "0");
     } else if (bootloader == "I9300I") {
         /* s3ve3gds */
         property_override("ro.product.model", "GT-I9300I");
         property_override("ro.product.device", "s3ve3gds");
-        property_override("ro.multisim.set_audio_params", "true");
-        property_override("ro.multisim.simslotcount", "2");
-        property_override("persist.radio.multisim.config", "dsds");
-        property_override("ro.telephony.default_network", "0,1");
+        property_set("ro.multisim.set_audio_params", "true");
+        property_set("ro.multisim.simslotcount", "2");
+        property_set("persist.radio.multisim.config", "dsds");
+        property_set("ro.telephony.default_network", "0,1");
     }
 }
