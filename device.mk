@@ -20,5 +20,7 @@ $(call inherit-product, device/samsung/msm8226-common/msm8226.mk)
 # Also get non-open-source specific aspects
 $(call inherit-product, vendor/samsung/s3ve3gxx/s3ve3gxx-vendor.mk)
 
+DEVICE_PATH := device/samsung/s3ve3gxx
+
 # Device overlay
-DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
+DEVICE_PACKAGE_OVERLAYS += $(DEVICE_PATH)/overlay

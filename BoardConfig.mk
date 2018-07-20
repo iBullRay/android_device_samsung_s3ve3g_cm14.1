@@ -17,6 +17,8 @@
 # Inherit from msm8226-common
 -include device/samsung/msm8226-common/BoardConfigCommon.mk
 
+DEVICE_PATH := device/samsung/s3ve3gxx
+
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_s3ve3gxx
 TARGET_RECOVERY_DEVICE_MODULES := libinit_s3ve3gxx
