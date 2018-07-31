@@ -1,5 +1,6 @@
 /*
-   Copyright (c) 2013, The Linux Foundation. All rights reserved.
+   Copyright (c) 2016, The Linux Foundation. All rights reserved.
+   Copyright (c) 2017-2018, The LineageOS Project. All rights reserved.
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
    met:
@@ -53,17 +54,17 @@ void vendor_load_properties()
 
     std::string bootloader = property_get("ro.bootloader");
 
-    if (bootloader == "I9301I") {
+    if (bootloader.find("I9301I") == 0) {
         /* s3ve3g */
         property_override("ro.product.model", "GT-I9301I");
         property_override("ro.product.device", "s3ve3g");
         property_set("ro.telephony.default_network", "0");
-    } else if (bootloader == "I9301Q") {
+    } else if (bootloader.find("I9301Q") == 0) {
         /* s3ve3gjv */
         property_override("ro.product.model", "GT-I9301Q");
         property_override("ro.product.device", "s3ve3gjv");
         property_set("ro.telephony.default_network", "0");
-    } else if (bootloader == "I9300I") {
+    } else if (bootloader.find("I9300I") == 0) {
         /* s3ve3gds */
         property_override("ro.product.model", "GT-I9300I");
         property_override("ro.product.device", "s3ve3gds");
@@ -71,5 +72,10 @@ void vendor_load_properties()
         property_set("ro.multisim.simslotcount", "2");
         property_set("persist.radio.multisim.config", "dsds");
         property_set("ro.telephony.default_network", "0,1");
+    } else {
+        ERROR("Unknown bootloader");
     }
+
+    std::string device = property_get("ro.product.device");
+    INFO("Found radio id: %s, setting build properties for %s device\n", radio.c_str(), device.c_str());
 }
