@@ -21,7 +21,6 @@ DEVICE_PATH := device/samsung/s3ve3gxx
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_s3ve3gxx
-TARGET_RECOVERY_DEVICE_MODULES := libinit_s3ve3gxx
 TARGET_OTA_ASSERT_DEVICE := s3ve3g,s3ve3gds,s3ve3gjv,s3ve3gxx
 
 # Kernel
