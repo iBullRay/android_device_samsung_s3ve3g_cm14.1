@@ -77,5 +77,5 @@ void vendor_load_properties()
     }
 
     std::string device = property_get("ro.product.device");
-    INFO("Found radio id: %s, setting build properties for %s device\n", radio.c_str(), device.c_str());
+    INFO("Found bootloader id: %s, setting build properties for %s device\n", bootloader.c_str(), device.c_str());
 }
