@@ -21,8 +21,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, device/samsung/s3ve3g/device.mk)
 
 # Device identifier. This must come after all inclusions
-PRODUCT_NAME := full_s3ve3gxx
-PRODUCT_DEVICE := s3ve3gxx
+PRODUCT_NAME := full_s3ve3g
+PRODUCT_DEVICE := s3ve3g
 PRODUCT_BRAND := samsung
 PRODUCT_MODEL := s3ve3g
 PRODUCT_MANUFACTURER := samsung
