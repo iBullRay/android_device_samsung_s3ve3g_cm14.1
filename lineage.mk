@@ -15,10 +15,10 @@
 #
 
 # Inherit from s3ve3gxx
-$(call inherit-product, device/samsung/s3ve3gxx/full_s3ve3gxx.mk)
+$(call inherit-product, device/samsung/s3ve3g/full_s3ve3g.mk)
 
 # Inherit some common Lineage stuff.
 $(call inherit-product, vendor/cm/config/common_full_phone.mk)
 
 PRODUCT_RELEASE_NAME := S3 Neo
-PRODUCT_NAME := lineage_s3ve3gxx 
+PRODUCT_NAME := lineage_s3ve3g

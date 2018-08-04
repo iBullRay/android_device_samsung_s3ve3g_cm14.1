@@ -17,7 +17,7 @@
 set -e
 
 VENDOR=samsung
-DEVICE=s3ve3gxx
+DEVICE=s3ve3g
 
 # Load extractutils and do some sanity checks
 MY_DIR="${BASH_SOURCE%/*}"

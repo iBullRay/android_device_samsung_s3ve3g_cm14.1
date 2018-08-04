@@ -16,7 +16,7 @@
 
 set -e
 
-DEVICE=s3ve3gxx
+DEVICE=s3ve3g
 VENDOR=samsung
 
 # Load extractutils and do some sanity checks

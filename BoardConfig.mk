@@ -17,14 +17,14 @@
 # Inherit from msm8226-common
 -include device/samsung/msm8226-common/BoardConfigCommon.mk
 
-DEVICE_PATH := device/samsung/s3ve3gxx
+DEVICE_PATH := device/samsung/s3ve3g
 
 # Init
-TARGET_INIT_VENDOR_LIB := libinit_s3ve3gxx
-TARGET_OTA_ASSERT_DEVICE := s3ve3g,s3ve3gds,s3ve3gjv,s3ve3gxx
+TARGET_INIT_VENDOR_LIB := libinit_s3ve3g
+TARGET_OTA_ASSERT_DEVICE := s3ve3g,s3ve3gds,s3ve3gjv
 
 # Kernel
-TARGET_KERNEL_CONFIG := s3ve3gxx_defconfig
+TARGET_KERNEL_CONFIG := s3ve3g_defconfig
 
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := $(DEVICE_PATH)
