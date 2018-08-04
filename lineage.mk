@@ -14,7 +14,7 @@
 # limitations under the License.
 #
 
-# Inherit from s3ve3gxx
+# Inherit from s3ve3g
 $(call inherit-product, device/samsung/s3ve3g/full_s3ve3g.mk)
 
 # Inherit some common Lineage stuff.
