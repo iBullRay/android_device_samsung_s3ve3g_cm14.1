@@ -173,22 +173,6 @@
         <item>7</item>
     </integer-array>
 
-    <!-- Control whether being in the desk dock should enable accelerometer
-         based screen orientation.  This defaults to true because it is
-         common for desk docks to be sold in a variety of form factors
-         with different orientations.  Since we cannot always tell these docks
-         apart and the docks cannot report their true orientation on their own,
-         we rely on gravity to determine the effective orientation. -->
-    <bool name="config_deskDockEnablesAccelerometer">false</bool>
-
-    <!-- Indicate whether closing the lid causes the device to go to sleep and opening
-         it causes the device to wake up.
-         The default is false. -->
-    <bool name="config_lidControlsSleep">true</bool>
-
-    <!-- Indicate whether the SD card is accessible without removing the battery. -->
-    <bool name="config_batterySdCardAccessibility">true</bool>
-
     <!-- Boolean indicating whether the wifi chipset has dual frequency band support -->
     <bool translatable="false" name="config_wifi_dual_band_support">true</bool>
 
@@ -232,12 +216,6 @@
     <!-- The restoring is handled by modem if it is true-->
     <bool name="skip_restoring_network_selection">true</bool>
 
-    <!-- Maximum number of supported users -->
-    <integer name="config_multiuserMaximumUsers">4</integer>
-
-    <!-- Whether UI for multi user should be shown -->
-    <bool name="config_enableMultiUserUI">true</bool>
-
      <!-- Dont remove For Fixing AutoRotate -->
     <bool name="config_useSystemClockforRotationSensor">true </bool>
 
@@ -246,8 +224,5 @@
     <!-- The duration (in milliseconds) that the radio will scan for a signal
     when there's no network connection. If the scan doesn't timeout, use zero -->
     <integer name="config_radioScanningTimeout">9000</integer>
-
-    <!-- Set the system language as value of EF LI/EF PL -->
-    <bool name="config_use_sim_language_file">false</bool>
 
 </resources>
