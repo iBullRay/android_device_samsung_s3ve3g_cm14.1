@@ -243,4 +243,8 @@
 
     <string translatable="false" name="config_radio_access_family">GSM|WCDMA</string>
 
+    <!-- The duration (in milliseconds) that the radio will scan for a signal
+    when there's no network connection. If the scan doesn't timeout, use zero -->
+    <integer name="config_radioScanningTimeout">9000</integer>
+
 </resources>
