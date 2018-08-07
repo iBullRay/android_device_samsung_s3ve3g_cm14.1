@@ -247,4 +247,7 @@
     when there's no network connection. If the scan doesn't timeout, use zero -->
     <integer name="config_radioScanningTimeout">9000</integer>
 
+    <!-- Set the system language as value of EF LI/EF PL -->
+    <bool name="config_use_sim_language_file">false</bool>
+
 </resources>
