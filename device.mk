@@ -22,5 +22,26 @@ $(call inherit-product, vendor/samsung/s3ve3g/s3ve3g-vendor.mk)
 
 DEVICE_PATH := device/samsung/s3ve3g
 
+# Audio configuration
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/audio_platform_info.xml:system/etc/audio_platform_info.xml \
+    $(DEVICE_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf \
+    $(DEVICE_PATH)/configs/mixer_paths.xml:system/etc/mixer_paths.xml
+
 # Device overlay
 DEVICE_PACKAGE_OVERLAYS += $(DEVICE_PATH)/overlay
+
+# Media
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml
+
+# Wifi
+PRODUCT_PACKAGES += \
+    hostapd_default.conf \
+    p2p_supplicant_overlay.conf \
+    wpa_supplicant_overlay.conf
+
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/wifi/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
+    $(DEVICE_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini \
+    $(DEVICE_PATH)/wifi/WCNSS_qcom_wlan_nv.bin:system/etc/firmware/wlan/prima/WCNSS_qcom_wlan_nv.bin
