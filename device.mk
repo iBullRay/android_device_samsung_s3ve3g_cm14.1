@@ -24,6 +24,7 @@ DEVICE_PATH := device/samsung/s3ve3g
 
 # Audio configuration
 PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/configs/audio_effects.conf:system/etc/audio_effects.conf \
     $(DEVICE_PATH)/configs/audio_platform_info.xml:system/etc/audio_platform_info.xml \
     $(DEVICE_PATH)/configs/audio_policy.conf:system/etc/audio_policy.conf \
     $(DEVICE_PATH)/configs/mixer_paths.xml:system/etc/mixer_paths.xml
