@@ -171,10 +171,12 @@ vendor/lib/libCB.so
 vendor/lib/libgsl.so
 vendor/lib/libllvm-qcom.so
 vendor/lib/libOpenCL.so
-vendor/lib/libRSDriver_adreno.so
-vendor/lib/librs_adreno.so
 vendor/lib/librs_adreno_sha1.so
+vendor/lib/librs_adreno.so
+vendor/lib/libRSDriver_adreno.so
 vendor/lib/libsc-a3xx.so
+vendor/lib/libscale.so
+vendor/lib/libuiblur.so
 
 # Graphics firmware
 etc/firmware/a300_pfp.fw
