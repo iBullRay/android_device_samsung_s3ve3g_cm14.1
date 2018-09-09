@@ -36,6 +36,25 @@ DEVICE_PACKAGE_OVERLAYS += $(DEVICE_PATH)/overlay
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml
 
+# NFC
+# See https://github.com/LineageOS/android_external_libnfc-nci/blob/cm-14.1/halimpl/pn54x/Android.mk#L15
+# for magic values of NXP_CHIP_TYPE.
+NXP_CHIP_TYPE := 1
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
+    frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
+    frameworks/native/data/etc/com.android.nfc_extras.xml:system/etc/permissions/com.android.nfc_extras.xml \
+    $(DEVICE_PATH)/configs/libnfc-nxp.conf:system/etc/libnfc-nxp.conf \
+    $(DEVICE_PATH)/configs/nfcee_access.xml:system/etc/nfcee_access.xml
+
+PRODUCT_PACKAGES += \
+    libpn547_fw \
+    nfc_nci.pn54x.default \
+    com.android.nfc_extras \
+    NfcNci \
+    Tag
+
 # Wifi
 PRODUCT_PACKAGES += \
     hostapd_default.conf \
