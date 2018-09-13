@@ -131,12 +131,10 @@ etc/firmware/cpp_firmware_v1_2_0.fw
 cameradata/datapattern_420sp.yuv
 cameradata/datapattern_front_420sp.yuv
 
-# DRM
+# DRM|WV
 bin/qseecomd
 vendor/lib/drm/libdrmwvmplugin.so
 vendor/lib/mediadrm/libwvdrmengine.so
-vendor/lib/libdrmdecrypt.so
-vendor/lib/libdrmdiag.so
 vendor/lib/libdrmfs.so
 vendor/lib/libdrmtime.so
 vendor/lib/libQSEEComAPI.so
