@@ -37,10 +37,6 @@ PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/media_profiles.xml:system/etc/media_profiles.xml
 
 # NFC
-# See https://github.com/LineageOS/android_external_libnfc-nci/blob/cm-14.1/halimpl/pn54x/Android.mk#L15
-# for magic values of NXP_CHIP_TYPE.
-NXP_CHIP_TYPE := 1
-
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.nfc.xml:system/etc/permissions/android.hardware.nfc.xml \
     frameworks/native/data/etc/android.hardware.nfc.hce.xml:system/etc/permissions/android.hardware.nfc.hce.xml \
