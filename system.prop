@@ -1,5 +1,2 @@
-# NFC
-ro.nfc.port=I2C
-
 # Radio
 telephony.lteOnGsmDevice=0
